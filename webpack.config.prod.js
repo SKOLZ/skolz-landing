@@ -103,12 +103,7 @@ module.exports = {
               plugins: () => [
                 require('postcss-flexbugs-fixes'),
                 autoprefixer({
-                  browsers: [
-                    '>1%',
-                    'last 4 versions',
-                    'Firefox ESR',
-                    'not ie <9'
-                  ],
+                  browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie <9'],
                   flexbox: 'no-2009'
                 })
               ]
@@ -134,12 +129,7 @@ module.exports = {
               plugins: () => [
                 require('postcss-flexbugs-fixes'),
                 autoprefixer({
-                  browsers: [
-                    '>1%',
-                    'last 4 versions',
-                    'Firefox ESR',
-                    'not ie <9'
-                  ],
+                  browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie <9'],
                   flexbox: 'no-2009'
                 })
               ]
@@ -168,23 +158,10 @@ module.exports = {
             loader: 'vue-svg-loader',
             options: {
               svgo: {
-                plugins: [
-                  {cleanupIDs: false},
-                  {convertPathData: false},
-                  {mergePaths: false}
-                ]
+                plugins: [{ cleanupIDs: false }, { convertPathData: false }, { mergePaths: false }]
               }
             }
-          },
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 10000,
-              name: 'assets/[name].[ext]',
-              fallback: 'file-loader'
-            }
-          },
-          'image-webpack-loader'
+          }
         ]
       }
     ]
@@ -201,16 +178,18 @@ module.exports = {
     }),
     new GenerateSW({
       exclude: [/\.(?:png|jpg|jpeg|svg)$/],
-      runtimeCaching: [{
-        urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
-        handler: 'cacheFirst',
-        options: {
-          cacheName: 'images',
-          expiration: {
-            maxEntries: 10
+      runtimeCaching: [
+        {
+          urlPattern: /\.(?:png|jpg|jpeg|svg)$/,
+          handler: 'cacheFirst',
+          options: {
+            cacheName: 'images',
+            expiration: {
+              maxEntries: 10
+            }
           }
         }
-      }]
+      ]
     })
   ],
   optimization: {

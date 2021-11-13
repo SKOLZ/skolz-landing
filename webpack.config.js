@@ -13,15 +13,13 @@ const rootFiles = ['index', 'serviceWorkerInstaller', 'vendor']
 
 const entry = glob
   .sync('./src/**/*.js')
-  .reduce(
-    (entries, entryFile) => Object.assign(entries, { [path.parse(entryFile).name]: entryFile }),
-    {}
-  )
+  .reduce((entries, entryFile) => Object.assign(entries, { [path.parse(entryFile).name]: entryFile }), {})
 
 module.exports = {
   entry,
   output: {
-    filename: (chunkFileName) => rootFiles.some(file => file === chunkFileName.chunk.name) ? '[name].js' : '[name]/[name].js',
+    filename: chunkFileName =>
+      rootFiles.some(file => file === chunkFileName.chunk.name) ? '[name].js' : '[name]/[name].js',
     path: path.resolve(__dirname, 'build')
   },
   target: 'web',
@@ -114,12 +112,7 @@ module.exports = {
               plugins: () => [
                 require('postcss-flexbugs-fixes'),
                 autoprefixer({
-                  browsers: [
-                    '>1%',
-                    'last 4 versions',
-                    'Firefox ESR',
-                    'not ie <9'
-                  ],
+                  browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie <9'],
                   flexbox: 'no-2009'
                 })
               ]
@@ -145,12 +138,7 @@ module.exports = {
               plugins: () => [
                 require('postcss-flexbugs-fixes'),
                 autoprefixer({
-                  browsers: [
-                    '>1%',
-                    'last 4 versions',
-                    'Firefox ESR',
-                    'not ie <9'
-                  ],
+                  browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie <9'],
                   flexbox: 'no-2009'
                 })
               ]
@@ -167,11 +155,7 @@ module.exports = {
         loader: 'vue-svg-loader',
         options: {
           svgo: {
-            plugins: [
-              {cleanupIDs: false},
-              {convertPathData: false},
-              {mergePaths: false}
-            ]
+            plugins: [{ cleanupIDs: false }, { convertPathData: false }, { mergePaths: false }]
           }
         }
       }
