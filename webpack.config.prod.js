@@ -9,6 +9,7 @@ const autoprefixer = require('autoprefixer')
 const glob = require('glob')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const { GenerateSW } = require('workbox-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const rootFiles = ['index', 'serviceWorkerInstaller', 'vendor']
 
@@ -167,6 +168,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [{ from: 'src/assets/profile_image.png', to: 'assets' }]
+    }),
     new CleanWebpackPlugin(['build']),
     new VueLoaderPlugin(),
     /**
