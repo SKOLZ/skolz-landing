@@ -10,6 +10,7 @@ import LogoImage from '../../assets/logo.svg'
 import WoloxLogo from '../../assets/wolox_logo.svg'
 
 const CustomCursor = () => import(/* webpackChunkName: "example" */ '../../components/CustomCursor')
+const CustomNavbar = () => import(/* webpackChunkName: "example" */ '../../components/Navbar')
 
 import './index.pug'
 import './index.scss'
@@ -24,7 +25,8 @@ const vm = new Vue({
     LinkedinIcon,
     TwitterIcon,
     LogoImage,
-    WoloxLogo
+    WoloxLogo,
+    CustomNavbar
   },
   data: {
     title: 'Gabriel Zanzotti'

@@ -4,7 +4,7 @@ html(lang='en')
     title title here
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1')
-    link(rel='preload' href='./about.js' as='script')
+    link(rel='preload' href='./about/about.js' as='script')
     link(rel='preload' href='./vendor.js' as='script')
     link(rel='preload' href='styles.about.css' as='style')
     link(rel='stylesheet' href='styles.about.css')
@@ -15,5 +15,4 @@ html(lang='en')
         img.logo(src='/assets/wolox_logo.svg' alt='logo')
         h1.title
          | {{ title }}
-      example
-    script(src='./about.js')
+    script(src='./about/about.js')

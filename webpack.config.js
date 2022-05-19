@@ -19,7 +19,9 @@ module.exports = {
   entry,
   output: {
     filename: chunkFileName =>
-      rootFiles.some(file => file === chunkFileName.chunk.name) ? '[name].js' : '[name]/[name].js',
+      rootFiles.some(file => file === chunkFileName.chunk.name)
+        ? '[name].[hash:8].js'
+        : '[name]/[name].[hash:8].js',
     path: path.resolve(__dirname, 'build')
   },
   target: 'web',

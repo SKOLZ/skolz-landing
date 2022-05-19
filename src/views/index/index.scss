@@ -33,7 +33,7 @@
   line-height: 60px;
   position: relative;
   color: $SKOLZ-white;
-  font-weight: 100;
+  font-weight: 200;
 
   &.regular {
     font-weight: 400;
@@ -61,7 +61,7 @@
   color: $SKOLZ-white;
   font-family: 'Jost', sans-serif;
   font-size: 24px;
-  font-weight: 100;
+  font-weight: 200;
   width: 530px;
   line-height: 50px;
 }
@@ -95,6 +95,13 @@
 .description-image-text {
   height: 16px;
   margin-left: 4px;
+}
+
+.navbar-wrapper {
+  position: absolute;
+  bottom: 45px;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 [v-cloak] {

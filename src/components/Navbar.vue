@@ -1,0 +1,81 @@
+<template lang="pug">
+  nav.navbar
+    a.nav-link(:class="{active: currentPage === 'home'}")
+      span.nav-text
+        | Home
+    a.nav-link(:class="{active: currentPage === 'about'}" href="/about")
+      span.nav-text
+        | About
+
+</template>
+<script>
+export default {
+  props: {
+    currentPage: {
+      type: String,
+      required: true,
+      default: 'home'
+    }
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+@import '../scss/variables/colors.scss';
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(-50%, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.navbar {
+  display: flex;
+  position: relative;
+}
+
+.nav-link {
+  margin: 0 5px;
+  width: 30px;
+  height: 20px;
+  padding: 5px 10px;
+
+  &::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border: 1px solid $SKOLZ-light-purple;
+    display: block;
+    transform: rotate(45deg);
+  }
+
+  .nav-text {
+    font-size: 14px;
+    opacity: 0;
+    transform: translateX(-50%);
+    position: absolute;
+    color: $SKOLZ-white;
+    bottom: calc(100% + 14px);
+    left: 50%;
+    text-transform: uppercase;
+    font-family: 'Jost', sans-serif;
+    letter-spacing: 4px;
+    transition: opacity 1s ease;
+  }
+
+  &.active::before {
+    background-color: $SKOLZ-light-purple;
+  }
+
+  &:hover .nav-text {
+    animation: fadeInUp 0.5s ease;
+    opacity: 1;
+  }
+}
+</style>

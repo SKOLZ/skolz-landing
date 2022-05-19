@@ -1,18 +1,12 @@
-// import Vue from 'vue'
-// // import Example from '../../components/Example'
+import Vue from 'vue'
 
-// // const Example = () => import(/* webpackChunkName: "example" */ '../../components/Example')
-
-// import './about.pug'
-// import './about.scss'
-
-// // eslint-disable-next-line
-// const vm = new Vue({
-//   el: '#about',
-//   components: {
-//     Example
-//   },
-//   data: {
-//     title: 'Welcome to Frontend Bootstrap!'
-//   }
-// })
+import './about.pug'
+import './about.scss'
+// debugger
+// eslint-disable-next-line
+const vm = new Vue({
+  el: '#about',
+  data: {
+    title: 'Welcome to Frontend Bootstrap!'
+  }
+})

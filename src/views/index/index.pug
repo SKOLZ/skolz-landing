@@ -4,10 +4,8 @@ html(lang='en')
     title SKOLZ - Intro
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1')
-    //- script(src="https://cdn.jsdelivr.net/npm/vue@2.6.12")
     script(type="text/javascript" src="./vendor.js")
     link(rel='preload' href='./index.js' as='script')
-    //- link(rel='preload' href='./vendor.js' as='script')
     link(rel='preload' href='styles.index.css' as='style')
     link(rel='stylesheet' href='styles.index.css')
     script(src='./vendor.js')
@@ -35,4 +33,6 @@ html(lang='en')
             a.social-twitter.social-link(href="https://twitter.com/WSKOLZ" rel="noreferrer noopener" target="_blank")
               twitter-icon.social-icon
         profile-image.profile-image
+        .navbar-wrapper
+          custom-navbar
     script(src='./index.js')

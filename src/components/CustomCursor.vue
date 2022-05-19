@@ -6,7 +6,7 @@
       .cursor-outer
 </template>
 <script>
-import Stats from 'stats.js'
+// import Stats from 'stats.js'
 
 export default {
   mounted: () => {
@@ -43,13 +43,14 @@ export default {
 
       const angle = Math.atan2(mouseY - outerY, mouseX - outerX) * 180 / Math.PI
 
-      const normalX = Math.min(Math.floor((Math.abs(mouseX - outerX) / outerX) * 1000) / 1000, 1) // eslint-disable-line no-magic-numbers
-      const normalY = Math.min(Math.floor((Math.abs(mouseY - outerY) / outerY) * 1000) / 1000, 1) // eslint-disable-line no-magic-numbers
+      const normalX = Math.min(Math.floor(Math.abs(mouseX - outerX) / outerX * 1000) / 1000, 1) // eslint-disable-line no-magic-numbers
+      const normalY = Math.min(Math.floor(Math.abs(mouseY - outerY) / outerY * 1000) / 1000, 1) // eslint-disable-line no-magic-numbers
       const normal = normalX + normalY * 0.5 // eslint-disable-line no-magic-numbers
       const skwish = normal * 0.7 // eslint-disable-line no-magic-numbers
 
       cursorInner.style.transform = `translate3d(${innerX}px, ${innerY}px, 0)`
-      cursorOuter.style.transform = `translate3d(${outerX}px, ${outerY}px, 0) rotate(${angle}deg) scale(${1 + skwish}, ${1 - skwish})`
+      cursorOuter.style.transform = `translate3d(${outerX}px, ${outerY}px, 0) rotate(${angle}deg) scale(${1 +
+        skwish}, ${1 - skwish})`
       // stats.end();
       // Stop loop if interpolation is done.
       if (normal !== 0) {
@@ -77,7 +78,6 @@ export default {
         cursor.classList.remove('cursor--hover')
       })
     })
-
   }
 }
 </script>
@@ -102,11 +102,11 @@ $ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
   &--hover {
     .cursor-inner {
       transform: scale(0.5);
-      opacity: 0;
+      opacity: 0.2;
     }
 
     .cursor-outer {
-      transform: scale(1.4);
+      transform: scale(1.5);
       border-color: $SKOLZ-light-purple;
       opacity: 1;
     }
