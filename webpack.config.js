@@ -1,183 +1,102 @@
-'use strict'
-
-const webpack = require('webpack')
-const path = require('path')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin // eslint-disable-line prefer-destructuring
-const DotEnv = require('dotenv-webpack')
-const autoprefixer = require('autoprefixer')
-const glob = require('glob')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
-
-const rootFiles = ['index', 'serviceWorkerInstaller', 'vendor']
-
-const entry = glob
-  .sync('./src/**/*.js')
-  .reduce((entries, entryFile) => Object.assign(entries, { [path.parse(entryFile).name]: entryFile }), {})
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry,
-  output: {
-    filename: chunkFileName =>
-      rootFiles.some(file => file === chunkFileName.chunk.name) ? '[name].js' : '[name]/[name].js',
-    path: path.resolve(__dirname, 'build')
-  },
-  target: 'web',
+  entry: path.resolve(__dirname, 'src', 'index.tsx'),
   mode: 'development',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'build'),
+    clean: true
+  },
   devServer: {
-    contentBase: path.resolve(__dirname, 'src'),
-    watchContentBase: true,
+    static: {
+      directory: path.join(__dirname, 'build'),
+    },
     compress: true,
     port: 3000,
-    hot: true
-  },
-  resolve: {
-    extensions: ['.js', '.vue'],
-    alias: {
-      vue: 'vue/dist/vue.js'
-    }
+    open: true
   },
   module: {
-    rules: [
+    rules:[
       {
-        test: /\.vue$/,
-        loader: 'vue-loader'
-      },
-      {
-        enforce: 'pre',
-        test: /\.pug$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'vue-pug-lint-loader',
-          options: require('./.pug-lintrc.json')
-        }
-      },
-      {
-        test: /\.pug$/,
-        oneOf: [
-          // this applies to `<template lang="pug">` in Vue components
-          {
-            resourceQuery: /^\?vue/,
-            use: ['pug-plain-loader']
-          },
-          {
-            use: [
-              {
-                loader: 'file-loader',
-                options: {
-                  name(file) {
-                    return file.includes('index') ? '[name].html' : '[name]/index.html'
-                  }
-                }
-              },
-              'pug-plain-loader'
-            ]
-          }
-        ]
-      },
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'eslint-loader',
-          options: {
-            configFile: '.eslintrc',
-            cache: true,
-            emitError: true,
-            emitWarning: true
-          }
-        }
-      },
-      {
-        test: /\.js$/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: 'babel-loader'
       },
       {
-        test: /\.scss$/,
+        test: /\.js$/,
+        use: ["source-map-loader"],
+        enforce: "pre"
+      },
+      {
+        test: /\.module.scss$/,
         exclude: /node_modules/,
         use: [
+          'style-loader',
           {
-            loader: 'style-loader',
+            loader: "css-loader",
             options: {
-              hmr: true
-            }
+              importLoaders: 1,
+              modules: {
+                exportLocalsConvention: "camelCase",
+                localIdentName: "[local]--[hash:base64:3]",
+              }
+            },
           },
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-              plugins: () => [
-                require('postcss-flexbugs-fixes'),
-                autoprefixer({
-                  browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie <9'],
-                  flexbox: 'no-2009'
-                })
-              ]
-            }
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              includePaths: [path.resolve(__dirname, 'src/scss')]
-            }
-          }
+          'postcss-loader',
+          'sass-loader'
         ]
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
+        exclude: [/node_modules/, /\.module.scss$/],
         use: [
           'style-loader',
           'css-loader',
+          'postcss-loader',
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.svg$/,
+        use: [
+          "babel-loader",
           {
-            loader: 'postcss-loader',
+            loader: 'react-svg-loader',
             options: {
-              ident: 'postcss',
-              plugins: () => [
-                require('postcss-flexbugs-fixes'),
-                autoprefixer({
-                  browsers: ['>1%', 'last 4 versions', 'Firefox ESR', 'not ie <9'],
-                  flexbox: 'no-2009'
-                })
-              ]
+              jsx: true,
+              svgo: {
+                plugins: [
+                  { cleanupIDs: false },
+                  { convertPathData: false },
+                  { mergePaths: false }
+                ]
+              }
             }
           }
         ]
       },
       {
-        test: /\.(jpg|png|gif|otf)$/,
-        use: 'file-loader?name=assets/[name].[ext]'
-      },
-      {
-        test: /\.svg$/,
-        loader: 'vue-svg-loader',
-        options: {
-          svgo: {
-            plugins: [{ cleanupIDs: false }, { convertPathData: false }, { mergePaths: false }]
-          }
-        }
+        test: /\.(jpe?g|gif|png|ico|woff|ttf|wav|mp3)$/,
+        type: 'asset/resource'
       }
-    ]
+    ], 
+  },
+  resolve: {
+    alias: {
+      src: path.resolve(__dirname, './src'),
+      scss: path.resolve(__dirname, './src/scss'),
+      assets: path.resolve(__dirname, './src/assets'),
+      components: path.resolve(__dirname, './src/components')
+    },
+    extensions: [".js", ".json", ".ts", ".tsx"]
   },
   plugins: [
-    new CleanWebpackPlugin(['build']),
-    new DotEnv(),
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false
-    }),
-    new VueLoaderPlugin()
-  ],
-  devtool: 'eval',
-  optimization: {
-    splitChunks: {
-      chunks: 'async'
-    }
-  },
-  performance: {
-    hints: false
-  }
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+      favicon: 'src/assets/favicon.ico'
+    })
+  ]
 }
