@@ -8,12 +8,14 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
+    publicPath: '/',
     clean: true
   },
   devServer: {
     static: {
       directory: path.join(__dirname, 'build'),
     },
+    historyApiFallback: true,
     compress: true,
     port: 3000,
     open: true
@@ -45,7 +47,14 @@ module.exports = {
               }
             },
           },
-          'postcss-loader',
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: ["autoprefixer"]
+              },
+            }
+          },
           'sass-loader'
         ]
       },
@@ -55,7 +64,14 @@ module.exports = {
         use: [
           'style-loader',
           'css-loader',
-          'postcss-loader',
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: ["autoprefixer"]
+              },
+            }
+          },
           'sass-loader'
         ]
       },
@@ -89,7 +105,9 @@ module.exports = {
       src: path.resolve(__dirname, './src'),
       scss: path.resolve(__dirname, './src/scss'),
       assets: path.resolve(__dirname, './src/assets'),
-      components: path.resolve(__dirname, './src/components')
+      screens: path.resolve(__dirname, './src/App/screens'),
+      components: path.resolve(__dirname, './src/App/components'),
+      hooks: path.resolve(__dirname, './src/App/hooks')
     },
     extensions: [".js", ".json", ".ts", ".tsx"]
   },

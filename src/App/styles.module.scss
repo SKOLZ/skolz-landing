@@ -1,0 +1,32 @@
+@import 'scss/variables/_colors.scss';
+
+.main {
+  background-image: url('~assets/black-felt.png');
+  background-color: $SKOLZ-black;
+  min-height: 100vh;
+  padding: 40px;
+  display: flex;
+}
+
+.logo {
+  position: absolute;
+  top: 25px;
+  right: 150px;
+  height: 60px;
+  width: 270px;
+}
+
+.logo:hover .logo-image{
+  fill: lighten($SKOLZ-light-purple, 10%);
+}
+
+.logo-image {
+  transition: fill 0.4s ease;
+}
+
+.navbar-wrapper {
+  position: absolute;
+  bottom: 45px;
+  left: 50%;
+  transform: translate(-50%);
+}

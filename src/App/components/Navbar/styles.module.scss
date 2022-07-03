@@ -12,6 +12,26 @@
   }
 }
 
+@keyframes roll {
+  0% {
+    transform: rotate(45deg) scale(1);
+    box-shadow: 0 0 0 0 rgba($SKOLZ-light-purple, 0.3);
+  }
+
+  50% {
+    transform: rotate(135deg) scale(1.2);
+  }
+  
+  70% {
+    box-shadow: 0 0 0 5px rgba($SKOLZ-light-purple, 0);
+  }
+
+  100% {
+    transform: rotate(225deg) scale(1);
+    box-shadow: 0 0 0 0 rgba($SKOLZ-light-purple, 0);
+  }
+}
+
 .navbar {
   display: flex;
   position: relative;
@@ -44,14 +64,25 @@
     font-family: 'Jost', sans-serif;
     letter-spacing: 4px;
     transition: opacity 1s ease;
+    pointer-events: none;
   }
 
-  &.active::before {
-    background-color: $SKOLZ-light-purple;
+  &:hover {
+    &::before {
+      animation: roll 0.5s linear;
+    }
+
+    .nav-text {
+      animation: fadeInUp 0.5s ease;
+      opacity: 1;
+    }
   }
 
-  &:hover .nav-text {
-    animation: fadeInUp 0.5s ease;
-    opacity: 1;
+  &.active {
+    pointer-events: none;
+
+    &::before {
+      background-color: $SKOLZ-light-purple;
+    }
   }
 }

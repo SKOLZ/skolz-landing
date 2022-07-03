@@ -1,0 +1,33 @@
+.title {
+  font-family: 'Jost', sans-serif;
+  font-size: 60px;
+  line-height: 60px;
+  position: relative;
+  color: $SKOLZ-white;
+  font-weight: 200;
+
+  &.regular {
+    font-weight: 400;
+    color: $SKOLZ-light-purple;
+  }
+
+  &.big {
+    font-size: 100px;
+    line-height: 100px;
+  }
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+}
+
+.text {
+  font-family: "Jost", sans-serif;
+  font-size: 20px;
+  line-height: 50px;
+  color: $SKOLZ-white;
+  font-weight: 200;
+  letter-spacing: 1px;
+  text-align: justify;
+  overflow-y: auto;
+}

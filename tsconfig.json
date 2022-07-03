@@ -31,7 +31,9 @@
     "baseUrl": "./",                                  /* Specify the base directory to resolve non-relative module names. */
     "paths": {
       "src/*": ["src/*"],
-      "components/*": ["src/components/*"],
+      "screens/*": ["src/App/screens/*"],
+      "components/*": ["src/App/components/*"],
+      "hooks/*": ["src/App/hooks/*"],
       "scss/*": ["src/scss/*"],
       "assets/*": ["src/asstes/*"],
     },                                      /* Specify a set of entries that re-map imports to additional lookup locations. */
