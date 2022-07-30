@@ -1,8 +1,8 @@
 @import 'scss/variables/_colors.scss';
 
 .border {
-  height: calc(100vh - 80px);
-  width: calc(100vw - 80px);
+  height: calc(100% - 80px);
+  width: calc(100% - 80px);
   border-radius: 1px;
   position: absolute;
   background-image: url('~assets/brilliant.png');
@@ -28,7 +28,8 @@
   font-family: 'Jost', sans-serif;
   font-size: 24px;
   font-weight: 200;
-  width: 530px;
+  width: 100%;
+  max-width: 530px;
   line-height: 50px;
 }
 
@@ -41,9 +42,11 @@
   display: flex;
 }
 
-.profile-image{
+.profile-image {
   margin: 0 auto;
   align-self: center;
+  padding: 120px 100px;
+  max-width: 700px;
 }
 
 .social-link:hover :global(.social-icon-main),
@@ -59,4 +62,80 @@
 .description-image-text {
   height: 16px;
   margin: 0 8px;
+}
+
+
+@media screen and (max-width: 1440px) {
+  .intro-info,
+  .profile-image {
+    padding: 80px 60px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .border {
+    clip-path: polygon(0 0, calc(50% - 135px - 20px) 0, calc(50% - 135px - 20px) 30px, 30px 30px, 30px calc(100% - 30px), calc(100% - 30px) calc(100% - 30px), calc(100% - 30px) 30px, calc(50% + 135px + 20px) 30px, calc(50% + 135px + 20px) 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .intro-info {
+    align-items: center;
+  }
+
+  .description {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .social {
+    margin-top: 0;
+  }
+
+  .intro-info {
+    padding: 0 60px 60px;
+  }
+
+  .profile-image {
+    max-width: 600px;
+    padding: 80px 60px 0;
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .last-name:global(.title) {
+    font-size: 13vw;
+    line-height: 13vw;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .border {
+    clip-path: polygon(0 0, calc(50% - 85px - 20px) 0, calc(50% - 85px - 20px) 20px, 20px 20px, 20px calc(100% - 20px), calc(100% - 20px) calc(100% - 20px), calc(100% - 20px) 20px, calc(50% + 85px + 20px) 20px, calc(50% + 85px + 20px) 0, 100% 0, 100% 100%, 0 100%);
+    height: calc(100% - 40px);
+    width: calc(100% - 40px);
+  }
+
+  .intro-info {
+    padding: 0 40px 60px;
+  }
+
+  .first-name {
+    font-size: 11vw;
+    line-height: 11vw;
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 36px;
+  }
+
+  .social-link {
+    margin: 0 10px;
+  }
+
+  .profile-image {
+    padding: 60px 40px 0;
+    margin-bottom: 40px;
+  }
 }

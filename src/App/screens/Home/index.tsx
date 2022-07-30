@@ -65,8 +65,8 @@ export default function Home({ logoRef }: HomeProps) {
     <>
       <div className={styles.border} ref={borderRef} />
       <div className={styles.introInfo}>
-        <h1 className="title" ref={firstNameRef}>Gabriel</h1>
-        <h1 className="title regular uppercase big m-bottom-10" ref={lastNameRef}>Zanzotti</h1>
+        <h1 className={`${styles.firstName} title m-top-auto`} ref={firstNameRef}>Gabriel</h1>
+        <h1 className={`${styles.lastName} title regular uppercase big m-bottom-10`} ref={lastNameRef}>Zanzotti</h1>
         <p className={`${styles.description} m-bottom-auto`} ref={descriptionRef}>
           Software Engineer graduated from ITBA specialized in Front-End development. Currently making Front-End & Mobile developers grow technically and professionally at
           <a className={styles.inlineLink} href="https://www.wolox.com.ar" rel="noreferrer noopener" target="_blank">
@@ -74,7 +74,7 @@ export default function Home({ logoRef }: HomeProps) {
           </a>
           part of Accenture.
         </p>
-        <div className={styles.social}>
+        <div className={`${styles.social} m-top-4`}>
           <a className={`${styles.socialLink} m-right-4`} ref={socialLinkedinRef} href="https://www.linkedin.com/in/skolz/" rel="noreferrer noopener" target="_blank">
             <LinkedinIcon className={styles.socialIcon}/>
           </a>

@@ -6,6 +6,7 @@
   min-height: 100vh;
   padding: 40px;
   display: flex;
+  position: relative;
 }
 
 .logo {
@@ -14,6 +15,7 @@
   right: 150px;
   height: 60px;
   width: 270px;
+  z-index: 1;
 }
 
 .logo:hover .logo-image{
@@ -29,4 +31,32 @@
   bottom: 45px;
   left: 50%;
   transform: translate(-50%);
+}
+
+@media screen and (max-width: 1200px) {
+  .logo {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .main {
+    flex-direction: column-reverse;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .logo {
+    width: 170px;
+    height: auto;
+    top: 10px;
+  }
+
+  .main {
+    padding: 20px;
+  }
+
+  .navbar-wrapper {
+    bottom: 20px;
+  }
 }
