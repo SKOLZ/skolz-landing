@@ -8,6 +8,7 @@ import TwitterIcon from 'assets/twitter_icon.svg';
 
 import ProfileImage from './components/profileImage';
 import styles from './styles.module.scss';
+
 type HomeProps = {
   logoRef: RefObject<HTMLAnchorElement>
 };

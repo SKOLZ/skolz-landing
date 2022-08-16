@@ -30,15 +30,39 @@
   );
 }
 
+.about-text {
+  opacity: 1;
+  overflow: auto;
+  max-height: calc(100vh - 250px);
+  padding: 0 25px;
+  margin-top: 50px;
+}
+
+.about-text::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.about-text::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+.about-text::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: $SKOLZ-light-purple;
+}
+
 .content-wrapper {
   padding: 60px;
+  height: calc(100vh - 80px);
 }
 
 .highlight-images {
   &.active {
-    display: block;
+    display: grid;
     position: relative;
-    flex: 1;
+    height: calc(100% - 100px);
   }
 
   &.inactive {
@@ -47,11 +71,9 @@
 }
 
 .image-wrapper {
-  // width: 400px;
-  // height: 300px;
   border-radius: 2px;
   overflow: hidden;
-  position: absolute;
+  object-fit: contain;
   
   &.slide-left {
     animation: translate-right 2s ease-in-out forwards;
@@ -102,76 +124,155 @@
     opacity: 0;
     animation: reveal 1s ease-in-out 1s forwards;
     transform-origin: 50% 50%;
+    object-fit: inherit;
+    object-position: inherit;
   }
 }
 
+.highschool-container,
+.university-container {
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.wolox-container {
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 2fr 1fr 2fr;
+  grid-gap: 30px;
+}
+
 .highschool-1 {
-  width: 357px;
-  height: 500px;
-  left: 0;
-  top: calc(50% - 250px);
+  height: 100%;
+  max-height: 500px;
+  width: 100%;
+  max-width: 357px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  align-self: center;
+  justify-self: end;
+  object-position: center right;
 }
 
 .highschool-2 {
-  width: 324px;
-  height: 225px;
-  left: 387px;
-  top: 67px;
+  height: 100%;
+  max-height: 225px;
+  width: 100%;
+  max-width: 324px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  align-self: end;
+  object-position: bottom left;
 }
 
 .highschool-3 {
-  width: 377px;
-  height: 250px;
-  left: 387px;
-  bottom: 70px;
+  height: 100%;
+  width: 100%;
+  max-height: 250px;
+  max-width: 377px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  align-self: start;
+  object-position: top left;
 }
 
 .university-1 {
-  left: 425px;
-  width: 400px;
-  top: calc(50% - 234px);
-  aspect-ratio: 64/75;
+  height: 100%;
+  width: 100%;
+  max-height: 457px;
+  max-width: 390px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  align-self: center;
+  object-position: center left;
 }
 
 .university-2 {
-  left: 0;
-  top: calc(50% + 13px);
-  width: 400px;
-  aspect-ratio: 18/11;
+  height: 100%;
+  width: 100%;
+  max-height: 244px;
+  max-width: 400px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  align-self: start;
+  object-position: top right;
 }
 
 .university-3 {
-  left: 0;
-  top: calc(50% - 273px - 13px);
-  width: 400px;
-  aspect-ratio: 256/175;
+  height: 100%;
+  width: 100%;
+  max-height: 273px;
+  max-width: 400px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  align-self: end;
+  object-position: bottom right;
 }
 
 .wolox-1 {
-  left: 310px;
-  top: 275px;
-  height: 300px;
-  aspect-ratio: 32/25;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  align-self: start;
+  height: 100%;
+  max-height: 300px;
+  width: 100%;
+  max-width: 384px;
+  object-position: top left;
 }
 
 .wolox-2 {
-  left: 0;
-  top: 10px;
-  height: 250px;
-  aspect-ratio: 1080/599;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  align-self: end;
+  width: 100%;
+  max-width: 450px;
+  justify-self: end;
+  max-height: 250px;
+  height: 100%;
+  object-position: bottom right;
 }
 
 .wolox-3 {
-  width: 290px;
-  top: 275px;
-  aspect-ratio: 13/16;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  align-self: start;
+  height: 100%;
+  max-height: 350px;
+  justify-self: end;
+  width: 100%;
+  max-width: 285px;
+  object-position: top right;
 }
 
 .wolox-4 {
-  left: 470px;
-  top: 40px;
-  height: 220px;
-  aspect-ratio: 11/14;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  align-self: end;
+  max-height: 320px;
+  height: 100%;
+  width: 100%;
+  max-width: 250px;
+  object-position: bottom left;
 }
 
 @keyframes reveal {

@@ -17,7 +17,7 @@ export default function Router ({ logoRef }: RouterProps) {
   return (
     <Routes>
       <Route path={ROUTES.HOME} element={<Home logoRef={logoRef} />} />
-      <Route path={ROUTES.ABOUT} element={<About />} />
+      <Route path={ROUTES.ABOUT} element={<About logoRef={logoRef} />} />
     </Routes>
   );
 }

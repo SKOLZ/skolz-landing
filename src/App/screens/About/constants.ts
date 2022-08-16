@@ -13,6 +13,7 @@ import wolox4 from 'assets/wolox/wolox_4.png';
 export const highlights = [
   {
     id: 0,
+    containerClass: styles.highschoolContainer,
     images: [
       {
         src: highschool1,
@@ -30,6 +31,7 @@ export const highlights = [
   },
   {
     id: 1,
+    containerClass: styles.universityContainer,
     images: [
       {
         src: university1,
@@ -47,6 +49,7 @@ export const highlights = [
   },
   {
     id: 2,
+    containerClass: styles.woloxContainer,
     images: [
       {
         src: wolox1,
