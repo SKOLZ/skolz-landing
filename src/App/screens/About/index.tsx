@@ -26,7 +26,7 @@ export default function About({ logoRef }: AboutProps) {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentHighlight(currentHighlight => currentHighlight < MAX_HIGHLIGHT_ID ? currentHighlight + 1 : 0);
-    }, 20000);
+    }, 20000000);
   
     return () => clearInterval(intervalId);
   }, []);
@@ -35,8 +35,8 @@ export default function About({ logoRef }: AboutProps) {
     <>
       <div className={styles.border} ref={borderRef} />
       <div className={`${styles.contentWrapper} row item-1`}>
-        <div className="column item-1 m-right-10">
-          <h1 className="title big" ref={titleRef}>About</h1>
+        <div className={`${styles.imagesColumn} column m-right-10`}>
+          <h1 className="title big m-bottom-4" ref={titleRef}>About</h1>
           {
             highlights.map(highlight => {
               return (
