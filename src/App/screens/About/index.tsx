@@ -26,7 +26,7 @@ export default function About({ logoRef }: AboutProps) {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentHighlight(currentHighlight => currentHighlight < MAX_HIGHLIGHT_ID ? currentHighlight + 1 : 0);
-    }, 20000000);
+    }, 20000);
   
     return () => clearInterval(intervalId);
   }, []);
