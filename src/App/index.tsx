@@ -8,13 +8,14 @@ import 'scss/application.scss';
 import Router from './components/Router';
 import styles from './styles.module.scss';
 import Navbar from './components/Navbar';
+import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
   const logoRef = useRef<HTMLAnchorElement>(null);
 
-
   return (
     <BrowserRouter>
+      <ScrollToTop/>
       <Link className={styles.logo} to="/" ref={logoRef} >
         <Logo className={styles.logoImage} />
       </Link>
