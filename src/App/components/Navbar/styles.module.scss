@@ -1,4 +1,4 @@
-@import 'scss/variables/colors.scss';
+@import 'scss/variables/colors';
 
 @keyframes fadeInUp {
   from {
@@ -21,7 +21,7 @@
   50% {
     transform: rotate(135deg) scale(1.2);
   }
-  
+
   70% {
     box-shadow: 0 0 0 5px rgba($SKOLZ-light-purple, 0);
   }

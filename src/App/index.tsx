@@ -1,5 +1,5 @@
-import { BrowserRouter, Link } from 'react-router-dom';
 import { useRef } from 'react';
+import { BrowserRouter, Link } from 'react-router-dom';
 
 import Logo from 'assets/logo.svg';
 import 'scss/application.scss';
@@ -15,8 +15,8 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <ScrollToTop/>
-      <Link className={styles.logo} to="/" ref={logoRef} >
+      <ScrollToTop />
+      <Link className={styles.logo} to="/" ref={logoRef}>
         <Logo className={styles.logoImage} />
       </Link>
       <div className={styles.main}>

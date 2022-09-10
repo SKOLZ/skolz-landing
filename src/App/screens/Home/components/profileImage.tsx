@@ -1,15 +1,15 @@
 import profileImagePng from 'assets/profile_image.png';
 
-type profileImageProps = {
+type ProfileImageProps = {
   className: string;
 }
 
-export default function profileImage ({ className }: profileImageProps) {
+export default function profileImage ({ className }: ProfileImageProps) {
   return (
     <svg className={className} viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <mask id="Mask">
-          <rect className="mask-square" x="84.4794" y="253.438" width="162.082" height="162.082" fill="black"/>
+          <rect className="mask-square" x="84.4794" y="253.438" width="162.082" height="162.082" fill="black" />
           <rect className="mask-square" x="84.4794" y="84.4794" width="162.082" height="162.082" />
           <rect className="mask-square" x="253.438" y="168.959" width="162.082" height="162.082" />
           <rect className="mask-square" x="253.438" y="337.917" width="162.082" height="162.082" />

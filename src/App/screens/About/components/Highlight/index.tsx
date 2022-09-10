@@ -1,10 +1,11 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
+
 import styles from './styles.module.scss';
 
 type HighlightProps = {
-  id: number,
-  current: number,
-  children: ReactNode
+  id: number;
+  current: number;
+  children: ReactNode;
 };
 
 export default function Highlight ({ id, current, children }: HighlightProps) {

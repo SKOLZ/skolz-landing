@@ -1,5 +1,5 @@
-import { useLayoutEffect, useRef, RefObject } from "react";
-import { gsap } from "gsap";
+import { useLayoutEffect, useRef, RefObject } from 'react';
+import { gsap } from 'gsap';
 
 import WoloxLogo from 'assets/wolox_logo.svg';
 import LinkedinIcon from 'assets/linkedin_icon.svg';
@@ -10,7 +10,7 @@ import ProfileImage from './components/profileImage';
 import styles from './styles.module.scss';
 
 type HomeProps = {
-  logoRef: RefObject<HTMLAnchorElement>
+  logoRef: RefObject<HTMLAnchorElement>;
 };
 
 export default function Home({ logoRef }: HomeProps) {
@@ -60,7 +60,7 @@ export default function Home({ logoRef }: HomeProps) {
       );
       delay += 0.1; // eslint-disable-line no-magic-numbers
     }
-  }, []);
+  }, [logoRef]);
 
   return (
     <>
@@ -77,13 +77,13 @@ export default function Home({ logoRef }: HomeProps) {
         </p>
         <div className={`${styles.social} m-top-4`}>
           <a className={`${styles.socialLink} m-right-4`} ref={socialLinkedinRef} href="https://www.linkedin.com/in/skolz/" rel="noreferrer noopener" target="_blank">
-            <LinkedinIcon className={styles.socialIcon}/>
+            <LinkedinIcon className={styles.socialIcon} />
           </a>
           <a className={`${styles.socialLink} m-right-4`} ref={socialGithubRef} href="https://github.com/SKOLZ" rel="noreferrer noopener" target="_blank">
-            <GithubIcon className={styles.socialIcon}/>
+            <GithubIcon className={styles.socialIcon} />
           </a>
           <a className={`${styles.socialLink} m-right-4`} ref={socialTwitterRef} href="https://twitter.com/WSKOLZ" rel="noreferrer noopener" target="_blank">
-            <TwitterIcon className={styles.socialIcon}/>
+            <TwitterIcon className={styles.socialIcon} />
           </a>
         </div>
       </div>

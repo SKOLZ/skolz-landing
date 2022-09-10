@@ -1,5 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
 import { RefObject } from 'react';
+import { Routes, Route } from 'react-router-dom';
 
 import Home from 'src/App/screens/Home';
 import About from 'src/App/screens/About';
@@ -7,10 +7,10 @@ import About from 'src/App/screens/About';
 export const ROUTES = {
   HOME: '/',
   ABOUT: 'about'
-}
+};
 
 type RouterProps = {
-  logoRef: RefObject<HTMLAnchorElement>
+  logoRef: RefObject<HTMLAnchorElement>;
 };
 
 export default function Router ({ logoRef }: RouterProps) {

@@ -1,20 +1,28 @@
-@import 'scss/variables/colors.scss';
+@import 'scss/variables/colors';
 
 $ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
-$ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+$ease-out-quart: cubic-bezier(0.17, 0.84, 0.44, 1);
 
-html {
-  cursor: none;
-
-  &:hover {
-    .cursor {
-      opacity: 1;
-    }
-  }
+.cursor-inner {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: $SKOLZ-white;
+  border-radius: 50%;
+  transition: transform 0.4s $ease-out-quint, opacity 0.4s $ease-out-quart;
 }
 
-button:hover, a:hover {
-  cursor: none;
+.cursor-outer {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba($SKOLZ-purple, 0.75);
+  border-radius: 50%;
+  box-sizing: border-box;
+  transition:
+    border 0.4s $ease-out-quart,
+    transform 0.4s $ease-out-quint,
+    opacity 0.4s $ease-out-quart;
 }
 
 .cursor {
@@ -43,6 +51,21 @@ button:hover, a:hover {
   }
 }
 
+html {
+  cursor: none;
+
+  &:hover {
+    .cursor {
+      opacity: 1;
+    }
+  }
+}
+
+button:hover,
+a:hover {
+  cursor: none;
+}
+
 .cursor-move-inner {
   position: absolute;
   top: 50%;
@@ -59,23 +82,4 @@ button:hover, a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-.cursor-inner {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: $SKOLZ-white;
-  border-radius: 50%;
-  transition: transform 0.4s $ease-out-quint, opacity 0.4s $ease-out-quart;
-}
-
-.cursor-outer {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: 1px solid rgba($SKOLZ-purple, 0.75);
-  border-radius: 50%;
-  box-sizing: border-box;
-  transition: border 0.4s $ease-out-quart, transform 0.4s $ease-out-quint, opacity 0.4s $ease-out-quart;
 }

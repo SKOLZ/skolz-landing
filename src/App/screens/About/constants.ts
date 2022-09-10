@@ -1,4 +1,3 @@
-import styles from './styles.module.scss';
 import highschool1 from 'assets/highschool/highschool_1.png';
 import highschool2 from 'assets/highschool/highschool_2.png';
 import highschool3 from 'assets/highschool/highschool_3.png';
@@ -9,6 +8,8 @@ import wolox1 from 'assets/wolox/wolox_1.png';
 import wolox2 from 'assets/wolox/wolox_2.png';
 import wolox3 from 'assets/wolox/wolox_3.png';
 import wolox4 from 'assets/wolox/wolox_4.png';
+
+import styles from './styles.module.scss';
 
 export const highlights = [
   {
@@ -69,4 +70,4 @@ export const highlights = [
       }
     ]
   }
-]; 
+];
