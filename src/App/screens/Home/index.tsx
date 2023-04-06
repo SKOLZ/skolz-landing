@@ -1,7 +1,6 @@
 import { useLayoutEffect, useRef, RefObject } from 'react';
 import { gsap } from 'gsap';
 
-import WoloxLogo from 'assets/wolox_logo.svg';
 import LinkedinIcon from 'assets/linkedin_icon.svg';
 import GithubIcon from 'assets/github_icon.svg';
 import TwitterIcon from 'assets/twitter_icon.svg';
@@ -69,11 +68,10 @@ export default function Home({ logoRef }: HomeProps) {
         <h1 className={`${styles.firstName} title m-top-auto`} ref={firstNameRef}>Gabriel</h1>
         <h1 className={`${styles.lastName} title regular uppercase big m-bottom-10`} ref={lastNameRef}>Zanzotti</h1>
         <p className={`${styles.description} m-bottom-auto`} ref={descriptionRef}>
-          Software Engineer graduated from ITBA specialized in Front-End development. Currently making Front-End & Mobile developers grow technically and professionally at
-          <a className={styles.inlineLink} href="https://www.wolox.com.ar" rel="noreferrer noopener" target="_blank">
-            <WoloxLogo className={styles.descriptionImageText} />
-          </a>
-          part of Accenture.
+          Software Engineer graduated from ITBA specialized in Front-End development. Currently creating high quality code and great gaming experiences at{' '}
+          <a className={styles.inlineLink} href="https://www.stryda.gg" rel="noreferrer noopener" target="_blank">
+            Stryda
+          </a>.
         </p>
         <div className={`${styles.social} m-top-4`}>
           <a className={`${styles.socialLink} m-right-4`} ref={socialLinkedinRef} href="https://www.linkedin.com/in/skolz/" rel="noreferrer noopener" target="_blank">
