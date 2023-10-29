@@ -8,6 +8,9 @@ import wolox1 from 'assets/wolox/wolox_1.png';
 import wolox2 from 'assets/wolox/wolox_2.png';
 import wolox3 from 'assets/wolox/wolox_3.png';
 import wolox4 from 'assets/wolox/wolox_4.png';
+import stryda1 from 'assets/stryda/stryda_1.png';
+import stryda2 from 'assets/stryda/stryda_2.png';
+import stryda3 from 'assets/stryda/stryda_3.png';
 
 import styles from './styles.module.scss';
 
@@ -67,6 +70,24 @@ export const highlights = [
       {
         src: wolox4,
         classes: `${styles.slideTop} ${styles.wolox4}`
+      }
+    ]
+  },
+  {
+    id: 3,
+    containerClass: styles.strydaContainer,
+    images: [
+      {
+        src: stryda1,
+        classes: `${styles.slideTop} ${styles.stryda1}`
+      },
+      {
+        src: stryda2,
+        classes: `${styles.slideRight} ${styles.stryda2}`
+      },
+      {
+        src: stryda3,
+        classes: `${styles.slideBottom} ${styles.stryda3}`
       }
     ]
   }

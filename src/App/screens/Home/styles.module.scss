@@ -63,44 +63,15 @@
   max-width: 700px;
 }
 
-.social-icon-main,
 .description-image-text {
-  transition: fill 0.4s ease;
-}
-
-.description-image-text {
-  height: 16px;
-  margin: 0 8px;
-}
-
-.inline-link {
-  color: $SKOLZ-white;
-  font-family: 'Jost', sans-serif;
-  font-size: 24px;
-  font-weight: 300;
+  height: 25px;
   position: relative;
+  top: 6px;
+}
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: calc(100% + 4px);
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background: $SKOLZ-white;
-  }
-
-  &:hover {
-    color: lighten($SKOLZ-light-purple, 10%);
-
-    &::after {
-      background: lighten($SKOLZ-light-purple, 10%);
-    }
-  }
-
-  &:active {
-    color: $SKOLZ-white;
-  }
+.social-link :global(.social-icon-main),
+.inline-link .description-image-text {
+  transition: fill 0.5s ease;
 }
 
 .social-link:hover :global(.social-icon-main),
@@ -109,6 +80,7 @@
 }
 
 @media screen and (max-width: $big-width-screen) {
+
   .intro-info,
   .profile-image {
     padding: 80px 60px;

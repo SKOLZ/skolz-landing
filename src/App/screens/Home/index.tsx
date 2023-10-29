@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import LinkedinIcon from 'assets/linkedin_icon.svg';
 import GithubIcon from 'assets/github_icon.svg';
 import TwitterIcon from 'assets/twitter_icon.svg';
+import StrydaLogo from 'assets/stryda_logo.svg';
 
 import ProfileImage from './components/profileImage';
 import styles from './styles.module.scss';
@@ -70,7 +71,7 @@ export default function Home({ logoRef }: HomeProps) {
         <p className={`${styles.description} m-bottom-auto`} ref={descriptionRef}>
           Software Engineer graduated from ITBA specialized in Front-End development. Currently creating high quality code and great gaming experiences at{' '}
           <a className={styles.inlineLink} href="https://www.stryda.gg" rel="noreferrer noopener" target="_blank">
-            Stryda
+            <StrydaLogo className={styles.descriptionImageText} />
           </a>.
         </p>
         <div className={`${styles.social} m-top-4`}>

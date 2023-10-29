@@ -71,6 +71,9 @@ export default function About({ logoRef }: AboutProps) {
           <p className="text m-bottom-5">
             At the begining of 2021 Accenture acquired Wolox and our main focus became the integration to Accenture&apos;s systems which lasted 6 months. After the integration although my tasks stayed mostly the same I had more direct participation with projects and with culture related initiatives.
           </p>
+          <p className="text m-bottom-5">
+            During 2022 I decided to move to Spain and therefore I had to start looking for new adventures. I decided I wanted my next challenge to be at a gaming related product company and I wanted to go back to coding, at least at the begining. I started checking my options and that&apos;s when I discovered <Highlight id={3} current={currentHighlight}>Stryda</Highlight>. It was everything I was looking for so I decided to join the company and I&apos;m currently very happy with my decision.
+          </p>
         </div>
       </div>
     </>

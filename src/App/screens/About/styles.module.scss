@@ -277,6 +277,12 @@
   grid-gap: 30px;
 }
 
+.stryda-container {
+  grid-template-rows: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+
 .wolox-container {
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 2fr 1fr 2fr;
@@ -398,6 +404,40 @@
   width: 100%;
   max-width: 250px;
   object-position: bottom left;
+}
+
+.stryda-1 {
+  height: 100%;
+  max-height: 520px;
+  width: 100%;
+  max-width: 294px;
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  align-self: start;
+  justify-self: end;
+  object-position: center right;
+}
+
+.stryda-2 {
+  height: 100%;
+  max-height: 300px;
+  width: 100%;
+  max-width: 438px;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  align-self: end;
+  object-position: bottom left;
+}
+
+.stryda-3 {
+  height: 100%;
+  width: 100%;
+  max-height: 450px;
+  max-width: 612px;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  align-self: start;
+  object-position: top left;
 }
 
 @media screen and (min-width: $small-width-screen) and (max-width: $mid-width-screen) {

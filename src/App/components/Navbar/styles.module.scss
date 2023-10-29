@@ -43,15 +43,6 @@
   height: 20px;
   padding: 5px 10px;
 
-  &::before {
-    content: '';
-    width: 8px;
-    height: 8px;
-    border: 1px solid $SKOLZ-light-purple;
-    display: block;
-    transform: rotate(45deg);
-  }
-
   .nav-text {
     font-size: 14px;
     opacity: 0;
@@ -63,8 +54,21 @@
     text-transform: uppercase;
     font-family: 'Jost', sans-serif;
     letter-spacing: 4px;
-    transition: opacity 1s ease;
+    transition: opacity 0.5s ease;
     pointer-events: none;
+  }
+
+  &:not(.active) .nav-text {
+    opacity: 0;
+  }
+
+  &::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border: 1px solid $SKOLZ-light-purple;
+    display: block;
+    transform: rotate(45deg);
   }
 
   &:hover {
@@ -72,7 +76,7 @@
       animation: roll 0.5s linear;
     }
 
-    .nav-text {
+    &:not(.active) .nav-text {
       animation: fadeInUp 0.5s ease;
       opacity: 1;
     }
@@ -80,6 +84,10 @@
 
   &.active {
     pointer-events: none;
+
+    &:not(:has(~ :hover)):not(:hover ~ *) .nav-text {
+      opacity: 1;
+    }
 
     &::before {
       background-color: $SKOLZ-light-purple;
