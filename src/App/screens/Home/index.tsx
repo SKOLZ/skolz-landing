@@ -1,10 +1,10 @@
 import { useLayoutEffect, useRef, RefObject } from 'react';
 import { gsap } from 'gsap';
 
+import HygraphLogo from 'assets/hygraph_logo.svg';
 import LinkedinIcon from 'assets/linkedin_icon.svg';
 import GithubIcon from 'assets/github_icon.svg';
 import TwitterIcon from 'assets/twitter_icon.svg';
-import StrydaLogo from 'assets/stryda_logo.svg';
 
 import ProfileImage from './components/profileImage';
 import styles from './styles.module.scss';
@@ -69,9 +69,9 @@ export default function Home({ logoRef }: HomeProps) {
         <h1 className={`${styles.firstName} title m-top-auto`} ref={firstNameRef}>Gabriel</h1>
         <h1 className={`${styles.lastName} title regular uppercase big m-bottom-10`} ref={lastNameRef}>Zanzotti</h1>
         <p className={`${styles.description} m-bottom-auto`} ref={descriptionRef}>
-          Software Engineer graduated from ITBA specialized in Front-End development. Currently creating high quality code and great gaming experiences at{' '}
-          <a className={styles.inlineLink} href="https://www.stryda.gg" rel="noreferrer noopener" target="_blank">
-            <StrydaLogo className={styles.descriptionImageText} />
+          Software Engineer graduated from ITBA specialized in Front-End development. Building high quality interfaces to improve content creators experience at{' '}
+          <a className={styles.inlineLink} href="https://www.hygrpah.com" rel="noreferrer noopener" target="_blank">
+            <HygraphLogo className={styles.descriptionImageText} />
           </a>.
         </p>
         <div className={`${styles.social} m-top-4`}>
