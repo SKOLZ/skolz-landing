@@ -56,12 +56,12 @@
 .highlight.active {
   font-weight: 400;
   letter-spacing: 0.5px;
-  animation: highlight 20s ease-in-out;
+  animation: highlight 5s ease-in-out;
 
   &::after {
     content: '';
     height: 2px;
-    animation: stretchingUnderline 20s ease-in-out;
+    animation: stretchingUnderline 5s ease-in-out;
     display: block;
     background: $SKOLZ-light-purple;
     position: absolute;

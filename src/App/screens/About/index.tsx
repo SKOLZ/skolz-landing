@@ -23,7 +23,7 @@ export default function About({ logoRef }: AboutProps) {
 
   useEffect(() => {
     const MAX_HIGHLIGHT_ID = highlights.length - 1;
-    const IMAGE_TRANSITION_DELAY = 20000;
+    const IMAGE_TRANSITION_DELAY = 5000;
 
     const intervalId = setInterval(() => {
       setCurrentHighlight(highlight => highlight < MAX_HIGHLIGHT_ID ? highlight + 1 : 0);
