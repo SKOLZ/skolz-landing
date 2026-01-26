@@ -1,0 +1,10 @@
+.logo {
+  color: var(--SKOLZ-white);
+  position: absolute;
+  right: 150px;
+  top: 25px;
+
+  &:hover {
+    color: var(--SKOLZ-light-purple);
+  }
+}

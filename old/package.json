@@ -13,8 +13,7 @@
     "start": "webpack serve",
     "eslint": "npx eslint \"**/*.tsx\" \"**/*.ts\"",
     "stylelint": "npx stylelint --customSyntax postcss-scss \"**/*.scss\"",
-    "lint": "npm run eslint && npm run stylelint",
-    "prepare": "husky install"
+    "lint": "npm run eslint && npm run stylelint"
   },
   "author": "",
   "license": "ISC",

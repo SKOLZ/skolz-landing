@@ -1,0 +1,21 @@
+.pageBorder {
+  border-radius: 1px;
+  position: absolute;
+  inset: 40px;
+  // background-image: url('~assets/brilliant.png');
+  background-color: var(--SKOLZ-white);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 270px - 140px) 0,
+    calc(100% - 270px - 140px) 30px,
+    30px 30px,
+    30px calc(100% - 30px),
+    calc(100% - 30px) calc(100% - 30px),
+    calc(100% - 30px) 30px,
+    calc(100% - 80px) 30px,
+    calc(100% - 80px) 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+}

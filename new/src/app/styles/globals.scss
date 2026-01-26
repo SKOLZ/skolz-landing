@@ -1,0 +1,30 @@
+@use 'reset';
+
+:root {
+  --black: #000;
+  --SKOLZ-black: #0A0A0A;
+  --SKOLZ-white: #FAFAFA;
+  --SKOLZ-purple: #37225A;
+  --SKOLZ-light-purple: #655189;
+}
+
+.body {
+  padding: 40px;
+  background-color: var(--SKOLZ-black);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+.navbarWrapper {
+  position: absolute;
+  display: flex;
+  bottom: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+

@@ -1,0 +1,94 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(-50%, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(45deg) scale(1);
+    box-shadow: 0 0 0 0 rgba(from var(--SKOLZ-light-purple) r g b / 0.3);
+  }
+
+  50% {
+    transform: rotate(135deg) scale(1.2);
+  }
+
+  70% {
+    box-shadow: 0 0 0 5px rgba(from var(--SKOLZ-light-purple) r g b / 0);
+  }
+
+  100% {
+    transform: rotate(225deg) scale(1);
+    box-shadow: 0 0 0 0 rgba(from var(--SKOLZ-light-purple) r g b / 0);
+  }
+}
+
+.navbar {
+  display: inline-flex;
+  position: relative;
+}
+
+.navLink {
+  margin: 0 5px;
+  width: 30px;
+  height: 20px;
+  padding: 5px 10px;
+
+  .navText {
+    font-size: 14px;
+    opacity: 0;
+    transform: translateX(-50%);
+    position: absolute;
+    color: var(--SKOLZ-white);
+    bottom: calc(100% + 14px);
+    left: 50%;
+    text-transform: uppercase;
+    font-family: 'Jost', sans-serif;
+    letter-spacing: 4px;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+  }
+
+  &:not(.active) .navText {
+    opacity: 0;
+  }
+
+  &::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--SKOLZ-light-purple);
+    display: block;
+    transform: rotate(45deg);
+  }
+
+  &:hover {
+    &::before {
+      animation: roll 0.5s linear;
+    }
+
+    &:not(.active) .navText {
+      animation: fadeInUp 0.5s ease;
+      opacity: 1;
+    }
+  }
+
+  &.active {
+    pointer-events: none;
+
+    &:not(:has(~ :hover)):not(:hover ~ *) .navText {
+      opacity: 1;
+    }
+
+    &::before {
+      background-color: var(--SKOLZ-light-purple);
+    }
+  }
+}
