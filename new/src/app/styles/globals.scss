@@ -8,16 +8,24 @@
   --SKOLZ-light-purple: #655189;
 }
 
+html {
+  scrollbar-gutter: stable both-edges;
+}
+
 .body {
   padding: 40px;
   background-color: var(--SKOLZ-black);
+  background-image: url('/black-felt.png');
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .main {
   flex: 1;
+  display: flex;
+  position: relative;
 }
 
 .navbarWrapper {
@@ -27,4 +35,15 @@
   left: 50%;
   transform: translateX(-50%);
 }
+
+@media screen and (max-width: 31.25rem) {
+  .body {
+    padding: 20px;
+  }
+
+  .navbarWrapper {
+    bottom: 20px;
+  }
+}
+
 

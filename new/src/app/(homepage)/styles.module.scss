@@ -1,8 +1,8 @@
 .pageBorder {
   border-radius: 1px;
   position: absolute;
-  inset: 40px;
-  // background-image: url('~assets/brilliant.png');
+  inset: 0;
+  background-image: url('/brilliant.png');
   background-color: var(--SKOLZ-white);
   clip-path: polygon(
     0 0,
@@ -18,4 +18,202 @@
     100% 100%,
     0 100%
   );
+}
+
+.mainContent {
+  display: flex;
+  width: 100%;
+}
+
+.introInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 120px 100px;
+}
+
+.firstName {
+  font-family: 'Jost', sans-serif;
+  font-size: 60px;
+  line-height: 60px;
+  position: relative;
+  color: var(--SKOLZ-white);
+  font-weight: 200;
+  margin-top: auto;
+}
+
+.lastName {
+  font-family: 'Jost', sans-serif;
+  font-size: 60px;
+  line-height: 60px;
+  position: relative;
+  color: var(--SKOLZ-white);
+  font-weight: 200;
+  margin-top: auto;
+  font-weight: 400;
+  color: var(--SKOLZ-light-purple);
+  font-size: 100px;
+  line-height: 100px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.description {
+  position: relative;
+  color: var(--SKOLZ-white);
+  font-family: 'Jost', sans-serif;
+  font-size: 24px;
+  font-weight: 200;
+  width: 100%;
+  max-width: 530px;
+  line-height: 50px;
+  margin-bottom: auto;
+}
+
+.descriptionImageText {
+  height: 25px;
+  position: relative;
+  top: 6px;
+  fill: var(--SKOLZ-white);
+}
+
+.inlineLink {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.socialLink :global(.social-icon-main),
+.inlineLink .descriptionImageText {
+  transition: fill 0.5s ease;
+}
+
+.socialLink:hover :global(.social-icon-main),
+.inlineLink:hover .descriptionImageText {
+  fill: hsl(from var(--SKOLZ-light-purple) h s calc(l * 1.1));
+}
+
+.social {
+  display: flex;
+  margin-top: 20px;
+}
+
+.socialLink:not(:last-child) {
+  margin-right: 20px;
+}
+
+.socialIcon {
+  width: 50px;
+  height: 50px;
+}
+
+.profileImage {
+  margin: 0 auto;
+  align-self: center;
+  padding: 120px 100px;
+  max-width: 700px;
+  flex: 1;
+}
+
+@media screen and (max-width: 90rem) {
+  .introInfo,
+  .profileImage {
+    padding: 80px 60px;
+  }
+}
+
+@media screen and (max-width: 75rem) {
+  .pageBorder {
+    clip-path: polygon(
+      0 0,
+      calc(50% - 135px - 20px) 0,
+      calc(50% - 135px - 20px) 30px,
+      30px 30px,
+      30px calc(100% - 30px),
+      calc(100% - 30px) calc(100% - 30px),
+      calc(100% - 30px) 30px,
+      calc(50% + 135px + 20px) 30px,
+      calc(50% + 135px + 20px) 0,
+      100% 0,
+      100% 100%,
+      0 100%
+    );
+  }
+
+  .mainContent {
+    flex-direction: column-reverse;
+  }
+
+  .introInfo {
+    align-items: center;
+    padding: 0 60px 60px;
+  }
+
+  .description {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .social {
+    margin-top: 0;
+  }
+
+  .profileImage {
+    max-width: 600px;
+    padding: 80px 60px 0;
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 43.75rem) {
+  .lastName {
+    font-size: 13vw;
+    line-height: 13vw;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 31.25rem) {
+  .pageBorder {
+    clip-path: polygon(
+      0 0,
+      calc(50% - 85px - 20px) 0,
+      calc(50% - 85px - 20px) 20px,
+      20px 20px,
+      20px calc(100% - 20px),
+      calc(100% - 20px) calc(100% - 20px),
+      calc(100% - 20px) 20px,
+      calc(50% + 85px + 20px) 20px,
+      calc(50% + 85px + 20px) 0,
+      100% 0,
+      100% 100%,
+      0 100%
+    );
+    height: 100%;
+    width: 100%;
+  }
+
+  .introInfo {
+    padding: 0 40px 60px;
+  }
+
+  .firstName {
+    font-size: 11vw;
+    line-height: 11vw;
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 36px;
+  }
+
+  .social-link {
+    margin: 0 10px;
+  }
+
+  .profile-image {
+    padding: 60px 40px 0;
+    margin-bottom: 40px;
+  }
 }

@@ -8,3 +8,20 @@
     color: var(--SKOLZ-light-purple);
   }
 }
+
+@media screen and (max-width: 75rem) {
+  .logo {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 31.25rem) {
+  .logo {
+    width: 170px;
+    height: auto;
+    top: 10px;
+  }
+}
+
