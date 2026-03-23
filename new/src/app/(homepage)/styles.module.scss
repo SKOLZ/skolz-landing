@@ -1,72 +1,81 @@
+.homepageContainer {
+  padding: 20px;
+  container-type: inline-size;
+  width: 100%;
+  height: calc(100dvh - 40px);
+  scrollbar-width: none;
+  overflow: auto;
+}
+
 .pageBorder {
   border-radius: 1px;
   position: absolute;
   inset: 0;
   background-image: url('/brilliant.png');
   background-color: var(--SKOLZ-white);
+  height: 100%;
+  width: 100%;
   clip-path: polygon(
     0 0,
-    calc(100% - 270px - 140px) 0,
-    calc(100% - 270px - 140px) 30px,
-    30px 30px,
-    30px calc(100% - 30px),
-    calc(100% - 30px) calc(100% - 30px),
-    calc(100% - 30px) 30px,
-    calc(100% - 80px) 30px,
-    calc(100% - 80px) 0,
+    calc(50% - 85px - 20px) 0,
+    calc(50% - 85px - 20px) 20px,
+    20px 20px,
+    20px calc(100% - 20px),
+    calc(100% - 20px) calc(100% - 20px),
+    calc(100% - 20px) 20px,
+    calc(50% + 85px + 20px) 20px,
+    calc(50% + 85px + 20px) 0,
     100% 0,
     100% 100%,
     0 100%
   );
 }
 
-.mainContent {
-  display: flex;
-  width: 100%;
+.content {
+  display: grid;
+  justify-items: center;
+  padding: 40px 20px;
+  min-height: 100%;
+  align-items: center;
+  gap: 40px;
 }
 
 .introInfo {
   display: flex;
   flex-direction: column;
-  padding: 120px 100px;
+  align-items: center;
 }
 
 .firstName {
   font-family: 'Jost', sans-serif;
-  font-size: 60px;
-  line-height: 60px;
+  font-size: clamp(1rem, 11vw, 3.75rem);
+  line-height: 1em;
   position: relative;
   color: var(--SKOLZ-white);
   font-weight: 200;
-  margin-top: auto;
 }
 
 .lastName {
   font-family: 'Jost', sans-serif;
-  font-size: 60px;
-  line-height: 60px;
+  font-size: clamp(1.5rem, 13vw, 6.25rem);
+  line-height: 1em;
   position: relative;
-  color: var(--SKOLZ-white);
-  font-weight: 200;
-  margin-top: auto;
   font-weight: 400;
   color: var(--SKOLZ-light-purple);
-  font-size: 100px;
-  line-height: 100px;
   text-transform: uppercase;
-  margin-bottom: 50px;
 }
 
 .description {
   position: relative;
   color: var(--SKOLZ-white);
   font-family: 'Jost', sans-serif;
-  font-size: 24px;
+  font-size: 18px;
+  line-height: 36px;
   font-weight: 200;
   width: 100%;
   max-width: 530px;
-  line-height: 50px;
-  margin-bottom: auto;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .descriptionImageText {
@@ -84,23 +93,19 @@
 }
 
 
-.socialLink :global(.social-icon-main),
+.socialLink [class$="social-icon-main"],
 .inlineLink .descriptionImageText {
   transition: fill 0.5s ease;
 }
 
-.socialLink:hover :global(.social-icon-main),
+.socialLink:hover [class$="social-icon-main"],
 .inlineLink:hover .descriptionImageText {
   fill: hsl(from var(--SKOLZ-light-purple) h s calc(l * 1.1));
 }
 
 .social {
   display: flex;
-  margin-top: 20px;
-}
-
-.socialLink:not(:last-child) {
-  margin-right: 20px;
+  gap: 20px;
 }
 
 .socialIcon {
@@ -109,21 +114,16 @@
 }
 
 .profileImage {
-  margin: 0 auto;
-  align-self: center;
-  padding: 120px 100px;
-  max-width: 700px;
-  flex: 1;
+  max-width: 230px;
+  min-height: 200px;
 }
 
-@media screen and (max-width: 90rem) {
-  .introInfo,
-  .profileImage {
-    padding: 80px 60px;
+@media screen and (min-width: 31.25rem) {
+  .homepageContainer {
+    padding: 30px;
+    height: calc(100dvh - 80px);
   }
-}
 
-@media screen and (max-width: 75rem) {
   .pageBorder {
     clip-path: polygon(
       0 0,
@@ -140,80 +140,48 @@
       0 100%
     );
   }
-
-  .mainContent {
-    flex-direction: column-reverse;
-  }
-
-  .introInfo {
-    align-items: center;
-    padding: 0 60px 60px;
-  }
-
-  .description {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-
-  .social {
-    margin-top: 0;
-  }
-
-  .profileImage {
-    max-width: 600px;
-    padding: 80px 60px 0;
-    margin-bottom: 50px;
-  }
 }
 
-@media screen and (max-width: 43.75rem) {
-  .lastName {
-    font-size: 13vw;
-    line-height: 13vw;
-    margin-bottom: 20px;
-  }
-}
-
-@media screen and (max-width: 31.25rem) {
+@media screen and (min-width: 75rem) {
   .pageBorder {
     clip-path: polygon(
       0 0,
-      calc(50% - 85px - 20px) 0,
-      calc(50% - 85px - 20px) 20px,
-      20px 20px,
-      20px calc(100% - 20px),
-      calc(100% - 20px) calc(100% - 20px),
-      calc(100% - 20px) 20px,
-      calc(50% + 85px + 20px) 20px,
-      calc(50% + 85px + 20px) 0,
+      calc(100% - 270px - 140px) 0,
+      calc(100% - 270px - 140px) 30px,
+      30px 30px,
+      30px calc(100% - 30px),
+      calc(100% - 30px) calc(100% - 30px),
+      calc(100% - 30px) 30px,
+      calc(100% - 80px) 30px,
+      calc(100% - 80px) 0,
       100% 0,
       100% 100%,
       0 100%
     );
-    height: 100%;
-    width: 100%;
+  }
+
+  .content {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .introInfo {
-    padding: 0 40px 60px;
+    align-items: flex-start;
   }
 
-  .firstName {
-    font-size: 11vw;
-    line-height: 11vw;
+  .profileImage {
+    height: max(400px, calc(100dvh - 80px - 60px - 80px));
+    max-height: 500px;
+    max-width: none;
+    order: 2;
+  }
+
+  .lastName {
+    margin-bottom: 50px;
   }
 
   .description {
-    font-size: 18px;
-    line-height: 36px;
-  }
-
-  .social-link {
-    margin: 0 10px;
-  }
-
-  .profile-image {
-    padding: 60px 40px 0;
-    margin-bottom: 40px;
+    font-size: 1.5rem;
+    line-height: 3.125rem;
+    margin-bottom: 50px;
   }
 }

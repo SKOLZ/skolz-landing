@@ -1,27 +1,31 @@
 .logo {
   color: var(--SKOLZ-white);
   position: absolute;
-  right: 150px;
-  top: 25px;
+  z-index: 1;
+  width: 170px;
+  height: auto;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: color .4s ease;
 
   &:hover {
     color: var(--SKOLZ-light-purple);
   }
 }
 
-@media screen and (max-width: 75rem) {
+@media screen and (min-width: 31.25rem) {
   .logo {
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 25px;
+    width: auto;
   }
 }
 
-@media screen and (max-width: 31.25rem) {
+@media screen and (min-width: 75rem) {
   .logo {
-    width: 170px;
-    height: auto;
-    top: 10px;
+    right: 150px;
+    left: auto;
+    transform: none;
   }
 }
 

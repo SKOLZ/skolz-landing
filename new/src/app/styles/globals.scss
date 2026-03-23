@@ -9,13 +9,13 @@
 }
 
 html {
-  scrollbar-gutter: stable both-edges;
+  scrollbar-gutter: stable;
+  background-color: var(--SKOLZ-black);
+  background-image: url('/black-felt.png');
 }
 
 .body {
-  padding: 40px;
-  background-color: var(--SKOLZ-black);
-  background-image: url('/black-felt.png');
+  padding: 20px;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
@@ -31,18 +31,19 @@ html {
 .navbarWrapper {
   position: absolute;
   display: flex;
-  bottom: 45px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 1;
 }
 
-@media screen and (max-width: 31.25rem) {
+@media screen and (min-width: 31.25rem) {
   .body {
-    padding: 20px;
+    padding: 40px;
   }
 
   .navbarWrapper {
-    bottom: 20px;
+    bottom: 45px;
   }
 }
 

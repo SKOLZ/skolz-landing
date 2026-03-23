@@ -11,20 +11,17 @@ import styles from "./styles.module.scss";
 
 export default function Homepage() {
   return (
-    <>
+    <section className={styles.homepageContainer}>
       <div className={styles.pageBorder} />
-      <div className={styles.mainContent}>
+      <div className={styles.content}>
+        <ProfileImage className={styles.profileImage} />
         <div className={styles.introInfo}>
-          <h1 className={styles.firstName}>
-            Gabriel
-          </h1>
-          <h1 className={styles.lastName}>
-            Zanzotti
-          </h1>
+          <h1 className={styles.firstName}>Gabriel</h1>
+          <h1 className={styles.lastName}>Zanzotti</h1>
           <p className={styles.description}>
             Software Engineer graduated from ITBA specialized in Front-End
             development. Building high quality interfaces to improve content
-            creators&apos; experiences at{' '}
+            creators&apos; experiences at{" "}
             <NextLink
               className={styles.inlineLink}
               href="https://www.hygraph.com"
@@ -62,8 +59,7 @@ export default function Homepage() {
             </a>
           </div>
         </div>
-        <ProfileImage className={styles.profileImage} />
       </div>
-    </>
+    </section>
   );
-} 
+}
