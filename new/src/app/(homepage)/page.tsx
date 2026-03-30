@@ -1,4 +1,5 @@
 import NextLink from "next/link";
+import cn from "classnames";
 
 import HygraphLogo from "../../../public/hygraph_logo.svg";
 import LinkedinIcon from "../../../public/linkedin_icon.svg";
@@ -16,19 +17,18 @@ export default function Homepage() {
       <div className={styles.content}>
         <ProfileImage className={styles.profileImage} />
         <div className={styles.introInfo}>
-          <h1 className={styles.firstName}>Gabriel</h1>
-          <h1 className={styles.lastName}>Zanzotti</h1>
-          <p className={styles.description}>
+          <h1 className={cn("title-2", styles.firstName)}>Gabriel</h1>
+          <h1 className={cn("title-1 primary uppercase", styles.lastName)}>Zanzotti</h1>
+          <p className={cn("text-1", styles.description)}>
             Software Engineer graduated from ITBA specialized in Front-End
-            development. Building high quality interfaces to improve content
-            creators&apos; experiences at{" "}
+            development. Building high quality interfaces to improve content management experiences at{" "}
             <NextLink
               className={styles.inlineLink}
               href="https://www.hygraph.com"
               rel="noreferrer noopener"
               target="_blank"
             >
-              <HygraphLogo className={styles.descriptionImageText} />
+              <HygraphLogo className={styles.hygraphDescriptionLogo} />
             </NextLink>
             .
           </p>

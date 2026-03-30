@@ -1,0 +1,38 @@
+%text {
+  font-family: 'Jost', sans-serif;
+  line-height: 1em;
+  color: var(--SKOLZ-white);
+  text-wrap: pretty;
+
+  &.primary {
+    color: var(--SKOLZ-light-purple);
+  }
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+}
+
+%title {
+  @extend %text;
+  text-wrap: balance;
+}
+
+.title-1 {
+  @extend %title;
+  font-size: clamp(1.5rem, 13vw, 6.25rem);
+  font-weight: 400;
+}
+
+.title-2 {
+  @extend %title;
+  font-size: clamp(1rem, 11vw, 3.75rem);
+  font-weight: 200;
+}
+
+.text-1 {
+  @extend %text;
+  font-size: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
+  line-height: clamp(2.25rem, 2rem + 1.45vw, 3.125rem);
+  font-weight: 200;
+}

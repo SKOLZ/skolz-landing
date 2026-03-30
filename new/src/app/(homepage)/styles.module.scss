@@ -1,8 +1,8 @@
 .homepageContainer {
-  padding: 20px;
+  margin: 20px;
   container-type: inline-size;
   width: 100%;
-  height: calc(100dvh - 40px);
+  height: calc(100dvh - 40px - 20px);
   scrollbar-width: none;
   overflow: auto;
 }
@@ -35,7 +35,7 @@
   display: grid;
   justify-items: center;
   padding: 40px 20px;
-  min-height: 100%;
+  // min-height: 100%;
   align-items: center;
   gap: 40px;
 }
@@ -46,42 +46,21 @@
   align-items: center;
 }
 
-.firstName {
-  font-family: 'Jost', sans-serif;
-  font-size: clamp(1rem, 11vw, 3.75rem);
-  line-height: 1em;
-  position: relative;
-  color: var(--SKOLZ-white);
-  font-weight: 200;
-}
-
 .lastName {
-  font-family: 'Jost', sans-serif;
-  font-size: clamp(1.5rem, 13vw, 6.25rem);
-  line-height: 1em;
-  position: relative;
-  font-weight: 400;
-  color: var(--SKOLZ-light-purple);
-  text-transform: uppercase;
+  margin-block-end: 20px;
 }
 
 .description {
-  position: relative;
-  color: var(--SKOLZ-white);
-  font-family: 'Jost', sans-serif;
-  font-size: 18px;
-  line-height: 36px;
-  font-weight: 200;
   width: 100%;
-  max-width: 530px;
   text-align: center;
-  margin-bottom: 40px;
+  margin-block-end: 40px;
+  max-width: 50ch;
 }
 
-.descriptionImageText {
+.hygraphDescriptionLogo {
   height: 25px;
   position: relative;
-  top: 6px;
+  top: 8px;
   fill: var(--SKOLZ-white);
 }
 
@@ -120,8 +99,8 @@
 
 @media screen and (min-width: 31.25rem) {
   .homepageContainer {
-    padding: 30px;
-    height: calc(100dvh - 80px);
+    margin: 30px;
+    height: calc(100dvh - 80px - 60px);
   }
 
   .pageBorder {
@@ -162,26 +141,69 @@
 
   .content {
     grid-template-columns: repeat(2, 1fr);
+    padding: 20px 80px;
+    gap: 40px;
   }
 
   .introInfo {
     align-items: flex-start;
+    max-height: 500px;
+    height: 100%;
   }
 
   .profileImage {
     height: max(400px, calc(100dvh - 80px - 60px - 80px));
     max-height: 500px;
-    max-width: none;
+    max-width: 100%;
     order: 2;
   }
 
   .lastName {
-    margin-bottom: 50px;
+    margin-block-end: 40px;
   }
 
   .description {
-    font-size: 1.5rem;
-    line-height: 3.125rem;
-    margin-bottom: 50px;
+    margin-block-end: auto;
+    text-align: start;
   }
 }
+
+
+@media screen and (min-width: 90rem) {
+  .content {
+    padding: 40px 100px;
+  }
+}
+
+.homepageContainer {
+    container-type: scroll-state size;
+    overflow: auto;
+    display: grid;
+    
+    .content {
+      grid-area: 1/1;
+    }
+
+    &::after {
+      content: " ";
+      grid-area: 1/1;
+      display: block;
+      position: sticky;
+      top: 0;
+      height: 100cqh;
+      width: 100cqw;
+      pointer-events: none;
+      
+      background: 
+        linear-gradient(to bottom, rgb(from var(--SKOLZ-black) r g b / var(--_scroll-shadow-color-1-opacity)) 20px, #0000 100px),
+        linear-gradient(to top, rgb(from var(--SKOLZ-black) r g b / var(--_scroll-shadow-color-2-opacity)) 20px, #0000 100px);
+      
+      @container scroll-state(scrollable: top) {
+        --_scroll-shadow-color-1-opacity: var(--_shadow-color-opacity, 100%);
+      }
+      
+      @container scroll-state(scrollable: bottom) {
+        --_scroll-shadow-color-2-opacity: var(--_shadow-color-opacity, 100%);
+      }
+    }
+  }
