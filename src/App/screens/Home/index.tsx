@@ -105,7 +105,7 @@ export default function Home({ logoRef }: HomeProps) {
           creators&apos; experiences at{" "}
           <a
             className={styles.inlineLink}
-            href="https://www.hygraph.com"
+            href="https://www.hygrpah.com"
             rel="noreferrer noopener"
             target="_blank"
           >
