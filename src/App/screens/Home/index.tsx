@@ -100,9 +100,9 @@ export default function Home({ logoRef }: HomeProps) {
           className={`${styles.description} m-bottom-auto`}
           ref={descriptionRef}
         >
-          Software Engineer graduated from ITBA specialized in Front-End
-          development. Building high quality interfaces to improve content
-          creators&apos; experiences at{" "}
+          Software Engineer specialized in Front-End development. Improving the
+          exprience for multi-brand companies building strong structured content
+          at{" "}
           <a
             className={styles.inlineLink}
             href="https://www.hygraph.com"
