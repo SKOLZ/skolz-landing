@@ -1,31 +1,15 @@
 .logo {
-  color: var(--SKOLZ-white);
-  position: absolute;
-  z-index: 1;
-  width: 170px;
   height: auto;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: color .4s ease;
+  width: auto;
+  color: var(--SKOLZ-white);
+  transition: color .4s ease, opacity 1.2s ease-in;
+  opacity: 1;
 
   &:hover {
     color: var(--SKOLZ-light-purple);
   }
-}
 
-@media screen and (min-width: 31.25rem) {
-  .logo {
-    top: 25px;
-    width: auto;
+  @starting-style {
+    opacity: 0;
   }
 }
-
-@media screen and (min-width: 75rem) {
-  .logo {
-    right: 150px;
-    left: auto;
-    transform: none;
-  }
-}
-

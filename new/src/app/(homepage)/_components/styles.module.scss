@@ -1,0 +1,8 @@
+.maskSquare {
+  fill: var(--white);
+  transition: fill 1.2s calc(sibling-index() * 0.05s) ease;
+
+  @starting-style {
+    fill: var(--black);
+  }
+}

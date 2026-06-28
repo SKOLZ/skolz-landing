@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Jost } from "next/font/google";
 import "./styles/globals.scss";
 import { Navbar } from "./_components/Navbar";
-import { Logo } from "./_components/Logo";
+import { ViewTransition } from "react";
 import classNames from "classnames";
 
 const jost = Jost({
@@ -12,7 +12,8 @@ const jost = Jost({
 
 export const metadata: Metadata = {
   title: "SKOLZ - intro",
-  description: "Portfolio of SKOLZ, a frontend web developer specializing in building modern, responsive, and high-performance web applications.",
+  description:
+    "Portfolio of SKOLZ, a frontend web developer specializing in building modern, responsive, and high-performance web applications.",
 };
 
 export default function RootLayout({
@@ -23,10 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={classNames(jost.variable, "body")}>
-        <Logo />
-        <main className="main">
-          {children}
-        </main>
+        {children}
         <div className="navbarWrapper">
           <Navbar />
         </div>
