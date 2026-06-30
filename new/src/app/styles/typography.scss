@@ -26,8 +26,21 @@
 
 .title-2 {
   @extend %title;
+  font-size: clamp(1.25rem, 12vw, 4rem);
+  font-weight: 100;
+}
+
+.title-3 {
+  @extend %title;
   font-size: clamp(1rem, 11vw, 3.75rem);
   font-weight: 200;
+}
+
+.title-4 {
+  @extend %title;
+  font-size: clamp(1rem, 8vw, 2rem);
+  line-height: 1.3125em;
+  font-weight: 400;
 }
 
 .text-1 {
@@ -35,4 +48,23 @@
   font-size: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
   line-height: clamp(2.25rem, 2rem + 1.45vw, 3.125rem);
   font-weight: 200;
+}
+
+.text-2 {
+  @extend %text;
+  font-size: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
+  line-height: 1.33em;
+  font-weight: 200;
+}
+
+.text-3 {
+  @extend %text;
+  font-size: clamp(1.125rem, 1rem + 0.625vw, 1.5rem);
+  font-weight: 400;
+}
+
+.text-4 {
+  @extend %text;
+  font-size: clamp(1rem, 1rem + 0.625vw, 1.25rem);
+  font-weight: 600;
 }

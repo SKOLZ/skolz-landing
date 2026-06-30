@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  gap: 4px;
+}
+
+.socialLink {
+  opacity: 1;
+  transition: opacity 1.2s calc(sibling-index() * 0.1s) ease-in;
+
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+.socialIcon {
+  width: 24px;
+  transition: fill 0.5s ease;
+  fill: var(--SKOLZ-white);
+}
+
+.socialLink:hover .socialIcon {
+  fill: hsl(from var(--SKOLZ-light-purple) h s calc(l * 1.1));
+}

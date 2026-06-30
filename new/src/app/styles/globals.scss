@@ -8,10 +8,11 @@
   --SKOLZ-white: #FAFAFA;
   --SKOLZ-purple: #37225A;
   --SKOLZ-light-purple: #655189;
+
+  --navbar-width: 80px;
 }
 
 html {
-  scrollbar-gutter: stable;
   background-color: var(--SKOLZ-black);
   background-image: url('/black-felt.png');
 }
@@ -22,6 +23,10 @@ html {
   display: flex;
   flex-direction: column;
   position: relative;
+}
+
+.contents {
+  display: contents;
 }
 
 .main {

@@ -5,6 +5,37 @@
   height: calc(100dvh - 40px - 20px);
   scrollbar-width: none;
   overflow: auto;
+
+  &::before {
+    content: '';
+    border-radius: 1px;
+    position: absolute;
+    inset: 0;
+    background-image: url('/brilliant.png');
+    background-color: var(--SKOLZ-white);
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(
+      0 0,
+      calc(50% - 85px - 20px) 0,
+      calc(50% - 85px - 20px) 20px,
+      20px 20px,
+      20px calc(100% - 20px),
+      calc(100% - 20px) calc(100% - 20px),
+      calc(100% - 20px) 20px,
+      calc(50% + 85px + 20px) 20px,
+      calc(50% + 85px + 20px) 0,
+      100% 0,
+      100% 100%,
+      0 100%
+    );
+    opacity: 1;
+    transition: opacity 1.2s ease-in;
+
+    @starting-style {
+      opacity: 0;
+    }
+  }
 }
 
 .logo {
@@ -14,36 +45,6 @@
   top: -10px;
   left: 50%;
   transform: translateX(-50%);
-}
-
-.pageBorder {
-  border-radius: 1px;
-  position: absolute;
-  inset: 0;
-  background-image: url('/brilliant.png');
-  background-color: var(--SKOLZ-white);
-  height: 100%;
-  width: 100%;
-  clip-path: polygon(
-    0 0,
-    calc(50% - 85px - 20px) 0,
-    calc(50% - 85px - 20px) 20px,
-    20px 20px,
-    20px calc(100% - 20px),
-    calc(100% - 20px) calc(100% - 20px),
-    calc(100% - 20px) 20px,
-    calc(50% + 85px + 20px) 20px,
-    calc(50% + 85px + 20px) 0,
-    100% 0,
-    100% 100%,
-    0 100%
-  );
-  opacity: 1;
-  transition: opacity 1.2s ease-in;
-
-  @starting-style {
-    opacity: 0;
-  }
 }
 
 .content {
@@ -162,28 +163,28 @@
   .homepageContainer {
     margin: 30px;
     height: calc(100dvh - 80px - 60px);
+
+    &::before {
+      clip-path: polygon(
+        0 0,
+        calc(50% - 135px - 20px) 0,
+        calc(50% - 135px - 20px) 30px,
+        30px 30px,
+        30px calc(100% - 30px),
+        calc(100% - 30px) calc(100% - 30px),
+        calc(100% - 30px) 30px,
+        calc(50% + 135px + 20px) 30px,
+        calc(50% + 135px + 20px) 0,
+        100% 0,
+        100% 100%,
+        0 100%
+      );
+    }
   }
 
   .logo {
     top: -15px;
     width: auto;
-  }
-
-  .pageBorder {
-    clip-path: polygon(
-      0 0,
-      calc(50% - 135px - 20px) 0,
-      calc(50% - 135px - 20px) 30px,
-      30px 30px,
-      30px calc(100% - 30px),
-      calc(100% - 30px) calc(100% - 30px),
-      calc(100% - 30px) 30px,
-      calc(50% + 135px + 20px) 30px,
-      calc(50% + 135px + 20px) 0,
-      100% 0,
-      100% 100%,
-      0 100%
-    );
   }
 }
 
@@ -194,7 +195,7 @@
     transform: none;
   }
 
-  .pageBorder {
+  .homepageContainer::before {
     clip-path: polygon(
       0 0,
       calc(100% - 270px - 140px) 0,

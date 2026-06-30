@@ -2,28 +2,30 @@ import NextLink from "next/link";
 import cn from "classnames";
 
 import HygraphLogo from "../../../public/hygraph_logo.svg";
-import LinkedinIcon from "../../../public/linkedin_icon.svg";
-import GithubIcon from "../../../public/github_icon.svg";
-import TwitterIcon from "../../../public/twitter_icon.svg";
+import LinkedinIcon from "../../../public/linkedin_icon_rhombus.svg";
+import GithubIcon from "../../../public/github_icon_rhombus.svg";
+import TwitterIcon from "../../../public/twitter_icon_rhombus.svg";
 
 import { Logo } from "../_components/Logo";
-
 import { ProfileImage } from "./_components/ProfileImage";
 
 import styles from "./styles.module.scss";
 
-export default function Homepage() {
+const Homepage = () => {
   return (
     <main className="main">
       <Logo className={styles.logo} />
       <section className={styles.homepageContainer}>
-        <div className={styles.pageBorder} />
         <div className={styles.content}>
           <ProfileImage className={styles.profileImage} />
           <div className={styles.introInfo}>
-            <h1 className={cn("title-2", styles.firstName)}>Gabriel</h1>
-            <h1 className={cn("title-1 primary uppercase", styles.lastName)}>
-              Zanzotti
+            <h1 className="contents">
+              <span className={cn("title-3", styles.firstName)}>Gabriel</span>
+              <span
+                className={cn("title-1 primary uppercase", styles.lastName)}
+              >
+                Zanzotti
+              </span>
             </h1>
             <p className={cn("text-1", styles.description)}>
               Software Engineer graduated from ITBA specialized in Front-End
@@ -73,4 +75,6 @@ export default function Homepage() {
       </section>
     </main>
   );
-}
+};
+
+export default Homepage;
